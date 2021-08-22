@@ -1,31 +1,31 @@
-# dpylint
+# todot
 
-dpylint is a pylint extension for linting python code using the discord.py library
+todot is a powerful tool to parse TODOs/FIXMEs etc. from source files
 
 ## Installation
 
-You'll need [python](https://www.python.org) and [pylint](https://www.pylint.org) installed in order to use the extension
+You'll need to install [python](https://www.python.org) in order to use the extension
 
-Currently there are two ways to install dpylint
+Currently there are two ways to install todot
 
 * Installing via pip
   1. Directly installing via pip (Recommended)
 
      ```sh
-     pip install dpylint
+     pip install todot
      ```
 
   2. Installing using pip and git
 
      ```sh
-     pip install git+https://github.com/wasi-master/dpylint.git
+     pip install git+https://github.com/wasi-master/todot.git
      ```
 
 * Cloning then installing
   1. Clone the repo
 
      ```sh
-     git clone https://github.com/wasi-master/dpylint.git
+     git clone https://github.com/wasi-master/todot.git
      ```
 
   2. Install using pip
@@ -75,4 +75,4 @@ gitignore=yes
 
 Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
-* For a list of things that need to be done, see the [todo list](https://github.com/wasi-master/dpylint/blob/main/TODO.md)
+* For a list of things that need to be done, see the [todo list](https://github.com/wasi-master/todot/blob/main/TODO.md)
