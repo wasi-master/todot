@@ -31,8 +31,8 @@
    <a href="https://github.com/wasi-master/todot"><img src="https://img.shields.io/github/languages/code-size/wasi-master/todot.svg?style=flat" alt="Code Size"></a>
    <a href="https://github.com/wasi-master/todot/blob/master/LICENSE.txt"><img src="https://img.shields.io/github/license/wasi-master/todot.svg?style=flat" alt="MIT License"></a>
    <a href="https://saythanks.io/to/arianmollik323@gmail.com"><img src="https://img.shields.io/badge/Say%20Thanks-!-1EAEDB.svg" alt="Say Thanks"></a>
-   <a href="https://pypistats.org/packages/todot"><img src="https://img.shields.io/pypi/dm/todot.svg?style=flat" alt="Downloads"></a>
-   <a href="https://pypi.org/project/todot/#history"><img src="https://img.shields.io/pypi/v/todot.svg" alt="Version"></a>
+   <a href="https://pypistats.org/packages/todot-python"><img src="https://img.shields.io/pypi/dm/todot-python.svg?style=flat" alt="Downloads"></a>
+   <a href="https://pypi.org/project/todot-python/#history"><img src="https://img.shields.io/pypi/v/todot-python.svg" alt="Version"></a>
    <a href="https://github.com/wasi-master/todot/actions/workflows/python-app.yml"><img src="https://img.shields.io/github/workflow/status/wasi-master/todot/Python%20application.svg?label=tests" alt="Tests"></a>
    <a href="https://github.com/wasi-master/todot/actions/workflows/python-publish.yml"><img src="https://img.shields.io/github/workflow/status/wasi-master/todot/Upload%20Python%20Package.svg?label=build" alt="Build"></a>
    <a href="https://github.com/psf/black"><img src="https://img.shields.io/badge/code%20style-black-000000.svg" alt="Code style: black"></a>
@@ -90,7 +90,7 @@ You'll need to have [python 3.6+](https://www.python.org) installed in order to 
   1. Directly installing via pip (Recommended)
 
      ```sh
-     pip install todot
+     pip install todot-python
      ```
 
   2. Installing using pip and git

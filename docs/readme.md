@@ -12,7 +12,7 @@ Currently there are two ways to install todot
   1. Directly installing via pip (Recommended)
 
      ```sh
-     pip install todot
+     pip install todot-python
      ```
 
   2. Installing using pip and git
