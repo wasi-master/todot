@@ -1,0 +1,8 @@
+{
+    "python.linting.pylintEnabled": true,
+    "cSpell.words": [
+        "todot",
+        "todotrc"
+    ],
+    "python.linting.enabled": true
+}
