@@ -30,6 +30,7 @@ setuptools.setup(
         "Natural Language :: English",
         "Topic :: Terminals",
     ],
+    keywords="todo todot todoteee todofind todofinder findtodo treetodo teasot leasot",
     packages=["todot"],
     python_requires=">=3.6",
     entry_points={
