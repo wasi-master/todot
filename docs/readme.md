@@ -6,16 +6,28 @@ todot is a powerful tool to parse TODOs/FIXMEs etc. from source files
 
 You'll need to install [python](https://www.python.org) in order to use the extension
 
-Currently there are two ways to install todot
+Currently there are two ways to install todot (the `[rich]` part adds rich terminal support)
 
 * Installing via pip
   1. Directly installing via pip (Recommended)
+
+     ```sh
+     pip install todot-python[rich]
+     ```
+
+     or
 
      ```sh
      pip install todot-python
      ```
 
   2. Installing using pip and git
+
+     ```sh
+     pip install "todot-python[rich] @ git+https://github.com/wasi-master/todot.git"
+     ```
+
+     or
 
      ```sh
      pip install git+https://github.com/wasi-master/todot.git
@@ -29,6 +41,12 @@ Currently there are two ways to install todot
      ```
 
   2. Install using pip
+
+     ```sh
+     pip install .[rich]
+     ```
+
+     or
 
      ```sh
      pip install .

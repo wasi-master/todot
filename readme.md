@@ -86,14 +86,30 @@ You'll need to have [python 3.6+](https://www.python.org) installed in order to 
 
 ### Installation
 
+You'll need to install [python](https://www.python.org) in order to use the extension
+
+Currently there are two ways to install todot (the `[rich]` part adds rich terminal support)
+
 * Installing via pip
   1. Directly installing via pip (Recommended)
+
+     ```sh
+     pip install todot-python[rich]
+     ```
+
+     or
 
      ```sh
      pip install todot-python
      ```
 
   2. Installing using pip and git
+
+     ```sh
+     pip install "todot-python[rich] @ git+https://github.com/wasi-master/todot.git"
+     ```
+
+     or
 
      ```sh
      pip install git+https://github.com/wasi-master/todot.git
@@ -106,17 +122,18 @@ You'll need to have [python 3.6+](https://www.python.org) installed in order to 
      git clone https://github.com/wasi-master/todot.git
      ```
 
-  2. Go to the cloned directory
+  2. Install using pip
 
      ```sh
-     cd todot
+     pip install .[rich]
      ```
 
-  3. Install using pip
+     or
 
      ```sh
      pip install .
      ```
+
 
 <!-- USAGE EXAMPLES -->
 ## Usage
