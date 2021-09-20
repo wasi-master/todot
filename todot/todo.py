@@ -1,6 +1,7 @@
 """File for the todo class"""
 from typing import Match
 
+
 class Todo:
     """Class for managing TODOs"""
     def __init__(self, match: Match, *, file_name=None, linepos=None):

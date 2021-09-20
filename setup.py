@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="todot-python",
-    version="0.1.0",
+    version="0.2.0",
     author="Wasi Master",
     author_email="arianmollik323@gmail.com",
     description="A powerful tool to parse TODOs/FIXMEs etc. from source files",
@@ -32,6 +32,7 @@ setuptools.setup(
     ],
     packages=["todot"],
     python_requires=">=3.6",
+    extras_require={"rich": ["rich"]},
     entry_points={
         "console_scripts": ["todot=todot.__main__:run"],
     },

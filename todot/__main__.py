@@ -8,12 +8,16 @@ from . import __version__
 from .cli import argparser
 from .finder import Finder
 from .parser import Parser
-from .printer import (ColoredConsolePrinter, ConsolePrinter,
-                      GithubFlavouredMarkdownFilePrinter, MarkdownFilePrinter,
+from .printer import (ColoredConsolePrinter, ConsolePrinter, GithubFlavouredMarkdownFilePrinter, MarkdownFilePrinter,
                       TextFilePrinter)
 
+try:
+    import rich
+except ImportError:
+    rich = None
+
 PRINTER_MAPPING = {
-    "default": ConsolePrinter,
+    "default": ColoredConsolePrinter if rich else ConsolePrinter,
     "color": ColoredConsolePrinter,
     "markdown": MarkdownFilePrinter,
     "text": TextFilePrinter,
