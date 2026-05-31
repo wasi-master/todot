@@ -22,7 +22,7 @@ def create_mock_todo(tag="TODO", text="Test todo", file_name="test.py", linepos=
     if associates:
         todo.associates = associates
     else:
-        todo.associates = [""]
+        todo.associates = []
 
     return todo
 

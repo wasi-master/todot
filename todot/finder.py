@@ -23,6 +23,14 @@ class Finder:
         self.exclude.extend(("TODO.md", "todo.txt"))
         self.gitignore = gitignore or False
         self.valid_file_types = re.compile(rf".*\.({'|'.join(self.filetypes)})$")
+        self.spec = None
+        if self.gitignore:
+            try:
+                with open(".gitignore") as f:
+                    gitignore_lines = f.read().splitlines()
+                self.spec = pathspec.PathSpec.from_lines('gitignore', gitignore_lines)
+            except (OSError, PermissionError, FileNotFoundError) as exc:
+                print(f"Failed to read gitignore due to {exc}")
 
     def _find(self, path: Path) -> Union[List[str], None]:
         files_grabbed = []
@@ -30,29 +38,27 @@ class Finder:
             files = list(os.scandir(path))
         except (OSError, NotADirectoryError, PermissionError) as exc:
             print(f"Failed to find files due to {exc}")
-            return
-        if self.gitignore:
-            try:
-                with open(".gitignore") as f:
-                    gitignore = f.read().splitlines()
-            except (OSError, PermissionError, FileNotFoundError) as exc:
-                print(f"Failed to read gitignore due to {exc}")
-                return
-            else:
-                formatted_files = [i.path.replace("\\", "/").replace("./","") for i in files]
-                spec = pathspec.PathSpec.from_lines(pathspec.patterns.GitWildMatchPattern, gitignore)
-                ignore_files = list(spec.match_files(formatted_files))
-                self.exclude.extend(ignore_files)
+            return []
+            
         for file in files:
-            if any(i.startswith(".") for i in file.name.replace("\\", "/").split("/")):
+            if file.name.startswith("."):
                 continue
-            if file.path.replace("\\", "/").lstrip("/.") in self.exclude:
+                
+            file_path = file.path.replace("\\", "/")
+            if file_path.startswith("./"):
+                file_path = file_path[2:]
+                
+            if file_path in self.exclude:
                 continue
+                
+            if self.spec and self.spec.match_file(file_path):
+                continue
+
             if file.is_dir():
                 files_grabbed.extend(self._find(file.path))
-            if not self.valid_file_types.match(file.name):
-                continue
-            files_grabbed.append(file.path)
+            elif self.valid_file_types.match(file.name):
+                files_grabbed.append(file.path)
+                
         return files_grabbed
 
     def find(self):

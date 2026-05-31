@@ -12,7 +12,8 @@ class Todo:
 
         self.tag = match.group("tag")
         self.text = match.group("text")
-        self.associates = [i.strip() for i in match.group("associates").split(",")]
+        assoc = match.group("associates")
+        self.associates = [i.strip() for i in assoc.split(",")] if assoc else []
 
     def __repr__(self):
         return f"{self.file_name}:{self.linepos} {self.tag} {tuple(self.associates)}: {self.text}"

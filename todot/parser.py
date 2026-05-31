@@ -29,8 +29,7 @@ class Parser:
         """Does the actual parsing"""
         for file in self.files:
             with open(file, encoding="utf-8") as f:
-                lines = f.read().splitlines()
-                for linepos, line in enumerate(lines, 1):
+                for linepos, line in enumerate(f, 1):
                     match = self.regex.search(line)
                     if not match:
                         continue

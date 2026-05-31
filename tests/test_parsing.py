@@ -84,7 +84,7 @@ def test_parser_with_associates():
 
             # Check TODO without associates (note: */ is part of text)
             assert todos[2].tag == "TODO"
-            assert todos[2].associates == [""]
+            assert todos[2].associates == []
             assert todos[2].text == "No assignee here */"
 
         finally:

@@ -188,5 +188,5 @@ def test_finder_nonexistent_path():
     finder = Finder(path=nonexistent_path)
     found_files = finder.find()
 
-    # Should return None due to exception handling
-    assert found_files is None
+    # Should return [] due to exception handling
+    assert found_files == []
